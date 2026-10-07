@@ -14,7 +14,7 @@ Centralizar, em um único repositório público, meus projetos **acadêmicos** e
 | Projetos acadêmicos | `projetos-academicos/` | Trabalhos e desafios da faculdade/bootcamp, um projeto por pasta. |
 | Projetos pessoais | `projetos-pessoais/` | Estudos e projetos próprios (automação, IA, scripts), um projeto por pasta. |
 | Documentação | `docs/` | Planejamento, guia de versionamento, colaboração e integração com o LinkedIn. |
-| Apresentação | `apresentacao/` | Slides em HTML e roteiro do vídeo de 5 minutos (YouTube). |
+| Apresentação | `apresentacao/` | Slides em HTML da apresentação de 5 minutos. |
 
 ## 3. Estrutura de diretórios
 
@@ -40,7 +40,7 @@ github-page/
 │   └── linkedin.md             # Como o repositório foi integrado ao LinkedIn
 ├── apresentacao/
 │   ├── index.html              # Slides da apresentação
-│   └── roteiro.md              # Roteiro do vídeo de 5 minutos
+│   └── img/                    # Imagens usadas nos slides
 ├── CHANGELOG.md                # Histórico de versões (v1.0, v1.1, ...)
 ├── LICENSE                     # Licença MIT
 ├── .gitignore

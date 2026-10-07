@@ -3,6 +3,16 @@
 Todas as mudanças relevantes deste repositório são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versões marcadas com tags Git.
 
+## [Não lançado]
+
+### Removido
+- Roteiro do vídeo (`apresentacao/roteiro.md`), usado só como apoio para a gravação.
+- Pasta `Claude outputs/` com arquivos de entrega, que não fazem parte do portfólio.
+
+### Alterado
+- `.gitignore` passa a ignorar a pasta `Claude outputs/`.
+- Referências ao roteiro removidas dos READMEs, do site e do planejamento.
+
 ## [1.3] — 2026-10-06
 
 ### Alterado

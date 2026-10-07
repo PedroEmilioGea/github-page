@@ -29,7 +29,7 @@ Desafio **"Criação de Repositório com Versionamento"**: desenvolver um reposi
 | 3 | Pastas por projeto + READMEs documentados | [`projetos-academicos/`](../), [`projetos-pessoais/`](../../projetos-pessoais/) |
 | 4 | Página no GitHub Pages | https://pedroemiliogea.github.io/github-page/ |
 | 5 | Repositório público + integração com LinkedIn | [`docs/linkedin.md`](../../docs/linkedin.md) |
-| 6 | Apresentação de 5 minutos | [`apresentacao/`](../../apresentacao/) — slides e [roteiro](../../apresentacao/roteiro.md) |
+| 6 | Apresentação de 5 minutos | [`apresentacao/`](../../apresentacao/) — slides ([abrir online](https://pedroemiliogea.github.io/github-page/apresentacao/)) |
 
 ## 🛠️ Tecnologias
 

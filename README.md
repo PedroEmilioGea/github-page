@@ -57,7 +57,7 @@ github-page/
 ├── projetos-academicos/     # Um projeto acadêmico por pasta, cada um com README
 ├── projetos-pessoais/       # Um projeto pessoal por pasta, cada um com README
 ├── docs/                    # Planejamento, versionamento, colaboração e LinkedIn
-├── apresentacao/            # Slides e roteiro do vídeo de 5 minutos
+├── apresentacao/            # Slides da apresentação de 5 minutos
 ├── CHANGELOG.md             # Histórico de versões
 ├── LICENSE                  # Licença MIT
 └── README.md                # Este arquivo
@@ -124,7 +124,7 @@ Detalhes em [`CHANGELOG.md`](CHANGELOG.md) e [`docs/versionamento.md`](docs/vers
 | [Versionamento](docs/versionamento.md) | Fluxo Git, padrão de commits e tags |
 | [Colaboração](docs/colaboracao.md) | Branches, Pull Requests, Issues e revisão |
 | [Integração com LinkedIn](docs/linkedin.md) | Como o portfólio foi adicionado ao perfil, com os textos usados |
-| [Apresentação](apresentacao/) | Slides e roteiro do vídeo de 5 minutos |
+| [Apresentação](apresentacao/) | Slides da apresentação de 5 minutos |
 
 ## 👤 Autor
 

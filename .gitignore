@@ -24,6 +24,9 @@ build/
 *.pem
 credentials*.json
 
+# Arquivos de entrega (não versionar)
+Claude outputs/
+
 # Logs e temporários
 *.log
 *.tmp
