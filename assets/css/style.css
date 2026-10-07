@@ -202,7 +202,8 @@ svg { width: 1.1em; height: 1.1em; fill: currentColor; flex-shrink: 0; }
 .card__desc { margin: 0; color: var(--text-muted); font-size: .95rem; flex-grow: 1; }
 .card__tags { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
 .card__tags li { font-family: var(--mono); font-size: .75rem; padding: 3px 8px; border-radius: 6px; background: var(--bg-alt); color: var(--text-muted); }
-.card__links { display: flex; gap: 18px; font-weight: 600; font-size: .92rem; padding-top: 6px; }
+.card__links a { white-space: nowrap; }
+.card__links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-weight: 600; font-size: .92rem; padding-top: 6px; }
 
 .badge { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; padding: 4px 10px; border-radius: 999px; }
 .badge--academico { background: var(--accent-soft); color: var(--accent); }

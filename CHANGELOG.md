@@ -6,8 +6,17 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e
 ## [Não lançado]
 
 ### Planejado
-- `v1.1` — projetos acadêmicos e pessoais (pastas, READMEs e cards no site).
 - `v1.2` — slides da apresentação, roteiro do vídeo e integração com o LinkedIn.
+
+## [1.1] — 2026-10-06
+
+### Adicionado
+- Projeto acadêmico `02-alugapp`: README com descrição, funcionalidades, tecnologias, diagrama de classes e minha participação.
+- Projeto pessoal `01-dino-game`: README com funcionalidades, controles, tecnologias, estrutura e capturas de tela.
+- Cards do AlugApp e do Dino Game na seção Projetos do site.
+
+### Alterado
+- Índices de projetos, README principal e versão do site atualizados para 1.1.
 
 ## [1.0] — 2026-10-06
 

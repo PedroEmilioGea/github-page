@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://pedroemiliogea.github.io/github-page/"><img alt="Site no ar" src="https://img.shields.io/badge/site-GitHub%20Pages-a3238e?style=for-the-badge&logo=github"></a>
   <a href="https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Pedro%20G%C3%AAa-0A66C2?style=for-the-badge&logo=linkedin"></a>
-  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-1.0-5b3cc4?style=for-the-badge">
+  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-1.1-5b3cc4?style=for-the-badge">
   <img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-1f9d55?style=for-the-badge">
 </p>
 
@@ -70,10 +70,13 @@ github-page/
 | # | Projeto | Descrição | Tecnologias |
 |---|---|---|---|
 | 01 | [Portfólio com GitHub Pages](projetos-academicos/01-portfolio-github-pages/) | Este repositório + site estático publicado no GitHub Pages. | HTML, CSS, JS, Git |
+| 02 | [AlugApp](projetos-academicos/02-alugapp/) | Plataforma de aluguel de itens entre pessoas — Projeto Integrador I a IV (CEUB), em grupo. [Site](https://alugapp.vercel.app/) | TypeScript, React, Supabase, Vercel |
 
 ### Pessoais
 
-Os projetos pessoais serão adicionados na versão **1.1** — veja [`projetos-pessoais/`](projetos-pessoais/).
+| # | Projeto | Descrição | Tecnologias |
+|---|---|---|---|
+| 01 | [Dino Game 2.0](projetos-pessoais/01-dino-game/) | O jogo do dinossauro do Chrome repaginado: 6 personagens, acessórios, 5 cenários, velocidades, sons e recordes. [Jogar](https://pedroemiliogea.github.io/dino-game/) | HTML, CSS, JavaScript, Canvas |
 
 ## 🛠️ Tecnologias
 
@@ -82,6 +85,7 @@ Os projetos pessoais serão adicionados na versão **1.1** — veja [`projetos-p
 - **GitHub Pages** — publicação do site estático
 - **HTML5, CSS3 e JavaScript** — construção do site (sem frameworks)
 - **Markdown** — documentação
+- Nos projetos: **TypeScript, React, Supabase, Vercel** (AlugApp) e **Canvas 2D, Web Audio API** (Dino Game)
 
 ## 💻 Como executar o site localmente
 
@@ -104,7 +108,7 @@ O projeto segue o padrão **Conventional Commits** e marca versões com **tags**
 | Versão | Status | Conteúdo |
 |---|---|---|
 | `v1.0` | ✅ Publicada | Estrutura do repositório, site inicial e documentação base |
-| `v1.1` | 🔜 Planejada | Projetos acadêmicos e pessoais |
+| `v1.1` | ✅ Publicada | Projetos AlugApp (acadêmico) e Dino Game (pessoal) |
 | `v1.2` | 🔜 Planejada | Slides, roteiro do vídeo e integração com o LinkedIn |
 
 Detalhes em [`CHANGELOG.md`](CHANGELOG.md) e [`docs/versionamento.md`](docs/versionamento.md).
