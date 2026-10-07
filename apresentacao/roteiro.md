@@ -33,13 +33,13 @@ Roteiro da apresentação do repositório para o YouTube — etapa 6 do desafio 
 > Olá! Eu sou o Pedro Emílio Gêa, estudante do 8º período de Ciência da Computação e desenvolvedor de automação e IA. Neste vídeo vou apresentar o meu portfólio no GitHub, criado na entrega intermediária do Bootcamp I.
 
 ### 2 · Objetivo (0:20 – 0:45)
-> O desafio tinha três objetivos: **organizar** meus projetos acadêmicos e pessoais em um só lugar, aplicar **boas práticas de versionamento** com Git e **publicar** tudo em um site no GitHub Pages, integrado ao LinkedIn. O resultado é um repositório público com três projetos documentados, três versões marcadas com tags e um site no ar.
+> O desafio tinha três objetivos: **organizar** meus projetos acadêmicos e pessoais em um só lugar, aplicar **boas práticas de versionamento** com Git e **publicar** tudo em um site no GitHub Pages, integrado ao LinkedIn. O resultado é um repositório público com três projetos documentados, quatro versões marcadas com tags e um site no ar.
 
 ### 3 · Planejamento (0:45 – 1:20)
 > Antes de escrever código, planejei as seções do repositório. Cada projeto tem sua própria pasta, separada entre **projetos acadêmicos** e **projetos pessoais**, e todo projeto tem um README no mesmo modelo. A pasta **docs** guarda o planejamento, o guia de versionamento, o guia de colaboração e a integração com o LinkedIn. *(mostrar o repositório no GitHub rapidamente)*
 
 ### 4 · Versionamento (1:20 – 2:00)
-> Para versionar, usei o Git com o GitHub Desktop: faço as alterações, reviso na aba *Changes*, faço o commit e o push. As mensagens seguem o padrão **Conventional Commits**, como `feat:` para novidades e `docs:` para documentação. Cada entrega virou uma **tag**: a **v1.0** com a estrutura e o site, a **v1.1** com os projetos e a **v1.2** com esta apresentação. Tudo fica registrado no **CHANGELOG**. *(mostrar a lista de commits e as tags no GitHub)*
+> Para versionar, usei o Git com o GitHub Desktop: faço as alterações, reviso na aba *Changes*, faço o commit e o push. As mensagens seguem o padrão **Conventional Commits**, como `feat:` para novidades e `docs:` para documentação. Cada entrega virou uma **tag**: a **v1.0** com a estrutura e o site, a **v1.1** com os projetos, a **v1.2** com esta apresentação e a **v1.3** com a revisão final. Tudo fica registrado no **CHANGELOG**. *(mostrar a lista de commits e as tags no GitHub)*
 
 ### 5 · GitHub Pages (2:00 – 2:35)
 > O site foi feito com HTML, CSS e JavaScript puros e é publicado pelo GitHub Pages a cada push na branch main. Ele tem as seções Sobre, Projetos, Documentação e Contato, um filtro de projetos, tema claro e escuro e funciona no celular. *(abrir o site, clicar no filtro e trocar o tema)*
@@ -54,7 +54,7 @@ Roteiro da apresentação do repositório para o YouTube — etapa 6 do desafio 
 > Cada projeto tem um README com descrição, tecnologias, prints, como executar e aprendizados. Também documentei o fluxo de colaboração em equipe — branches, Pull Requests e Issues — que é o que usamos na prática no AlugApp. *(mostrar o README do Dino Game)*
 
 ### 9 · LinkedIn (4:25 – 4:45)
-> Por fim, integrei o GitHub ao LinkedIn: o repositório é público, o site está na seção **Destaques** e os projetos estão na seção **Projetos** do meu perfil, com os links para o código. *(mostrar o perfil do LinkedIn)*
+> Por fim, integrei o GitHub ao LinkedIn: o repositório é público, meu perfil do GitHub tem o link do LinkedIn e, no LinkedIn, cadastrei o Portfólio, o AlugApp e o Dino Game na seção **Projetos**, com descrição, competências e links para o código e para os sites. *(mostrar a seção Projetos do LinkedIn)*
 
 ### 10 · Encerramento (4:45 – 5:00)
 > Os links do site, do repositório e do meu LinkedIn estão na tela e na descrição do vídeo. Obrigado por assistir!
@@ -98,6 +98,6 @@ Roteiro da apresentação do repositório para o YouTube — etapa 6 do desafio 
    04:25 LinkedIn
    ```
 4. **Visibilidade:** *Público* ou *Não listado* (só quem tem o link assiste).
-5. Copie o link do vídeo e me envie para eu adicionar ao site, ao README e ao PDF de entrega.
+5. Copie o link do vídeo e cole no documento de entrega (campo **Link Youtube**).
 
 [← Voltar ao README principal](../README.md)

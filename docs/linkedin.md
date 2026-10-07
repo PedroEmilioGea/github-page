@@ -8,10 +8,9 @@ Como o repositório e o site do portfólio foram conectados ao perfil profission
 
 - [x] Repositório **público** no GitHub
 - [x] Link do **LinkedIn no perfil do GitHub** (*Settings → Public profile → Social accounts*)
-- [ ] Site do portfólio em **Informações de contato → Site**
-- [ ] Site do portfólio na seção **Destaques**
-- [ ] **Projetos** cadastrados: Portfólio, AlugApp e Dino Game
-- [ ] **Publicação** apresentando o portfólio e o vídeo
+- [x] Seção **Projetos** do LinkedIn com Portfólio, AlugApp e Dino Game
+- [ ] *(opcional)* Site do portfólio em **Informações de contato → Site**
+- [ ] *(opcional)* Site do portfólio na seção **Destaques**
 
 ## 🔗 Links de compartilhamento
 
@@ -26,14 +25,14 @@ Como o repositório e o site do portfólio foram conectados ao perfil profission
 
 ---
 
-## 1. Informações de contato → Site
+## 1. *(Opcional)* Informações de contato → Site
 
 **Perfil → Editar introdução (lápis) → Informações de contato → Adicionar site**
 
 - **URL:** `https://pedroemiliogea.github.io/github-page/`
 - **Tipo:** Portfólio
 
-## 2. Destaques
+## 2. *(Opcional)* Destaques
 
 **Perfil → Adicionar seção → Recomendado → Adicionar destaques → Adicionar um link**
 
@@ -52,7 +51,7 @@ Como o repositório e o site do portfólio foram conectados ao perfil profission
 - **Nome:** `Portfólio com GitHub Pages`
 - **Descrição:**
   ```text
-  Repositório de portfólio com projetos acadêmicos e pessoais, organizado em pastas, documentado com README e versionado com Git (tags v1.0, v1.1, v1.2). Site estático em HTML, CSS e JavaScript publicado no GitHub Pages. Desenvolvido no Bootcamp I.
+  Repositório de portfólio com projetos acadêmicos e pessoais, organizado em pastas, documentado com README e versionado com Git (tags v1.0 a v1.3). Site estático em HTML, CSS e JavaScript publicado no GitHub Pages. Desenvolvido no Bootcamp I.
   ```
 - **Competências:** Git · GitHub · HTML · CSS · JavaScript
 - **Associado a:** Centro Universitário de Brasília (CEUB)
@@ -77,24 +76,5 @@ Como o repositório e o site do portfólio foram conectados ao perfil profission
   ```
 - **Competências:** JavaScript · HTML · CSS · Canvas · Desenvolvimento de jogos
 - **Mídia → Links:** `https://pedroemiliogea.github.io/dino-game/` e `https://github.com/PedroEmilioGea/dino-game`
-
-## 4. Publicação
-
-**Início → Começar publicação** — cole o texto, o link do vídeo e marque a instituição.
-
-```text
-🚀 Publiquei meu portfólio no GitHub!
-
-No Bootcamp I, organizei meus projetos acadêmicos e pessoais em um repositório versionado com Git e publiquei um site com GitHub Pages.
-
-📌 Destaques:
-• AlugApp — plataforma de aluguel de itens entre pessoas, desenvolvida em grupo do Projeto Integrador I ao IV (TypeScript, React, Supabase)
-• Dino Game 2.0 — o jogo do dinossauro do Chrome repaginado, com personagens, cenários e recordes (HTML, CSS, JavaScript)
-
-🌐 Portfólio: https://pedroemiliogea.github.io/github-page/
-🎥 Apresentação: [link do vídeo no YouTube]
-
-#GitHub #Git #Portfolio #CienciaDaComputacao #DesenvolvimentoWeb
-```
 
 [← Voltar à documentação](README.md)

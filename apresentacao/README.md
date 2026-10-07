@@ -10,6 +10,4 @@ Material da apresentação de 5 minutos do repositório (etapa 6 do desafio).
 
 **Navegação:** `→` / `Espaço` avança · `←` volta · `F` tela cheia · no celular, deslize para os lados.
 
-🎥 **Vídeo no YouTube:** *em breve*
-
 [← Voltar ao README principal](../README.md)

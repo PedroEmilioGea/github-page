@@ -3,10 +3,12 @@
 Todas as mudanças relevantes deste repositório são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versões marcadas com tags Git.
 
-## [Não lançado]
+## [1.3] — 2026-10-06
 
-### Planejado
-- Link do vídeo no YouTube no site e no README.
+### Alterado
+- Slide e roteiro da integração com o LinkedIn ajustados para a seção Projetos.
+- `docs/linkedin.md` com o checklist do que foi feito no perfil.
+- Correção do exemplo de commit no índice de projetos pessoais.
 
 ## [1.2] — 2026-10-06
 

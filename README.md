@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://pedroemiliogea.github.io/github-page/"><img alt="Site no ar" src="https://img.shields.io/badge/site-GitHub%20Pages-a3238e?style=for-the-badge&logo=github"></a>
   <a href="https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Pedro%20G%C3%AAa-0A66C2?style=for-the-badge&logo=linkedin"></a>
-  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-1.2-5b3cc4?style=for-the-badge">
+  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-1.3-5b3cc4?style=for-the-badge">
   <img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-1f9d55?style=for-the-badge">
 </p>
 
@@ -112,6 +112,7 @@ O projeto segue o padrão **Conventional Commits** e marca versões com **tags**
 | `v1.0` | ✅ Publicada | Estrutura do repositório, site inicial e documentação base |
 | `v1.1` | ✅ Publicada | Projetos AlugApp (acadêmico) e Dino Game (pessoal) |
 | `v1.2` | ✅ Publicada | Slides, roteiro do vídeo e integração com o LinkedIn |
+| `v1.3` | ✅ Publicada | Revisão final: ajustes no LinkedIn, slides e roteiro |
 
 Detalhes em [`CHANGELOG.md`](CHANGELOG.md) e [`docs/versionamento.md`](docs/versionamento.md).
 

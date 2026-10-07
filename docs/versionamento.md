@@ -63,3 +63,4 @@ Depois, no GitHub: **Releases** → **Draft a new release** → escolher a tag �
 | `v1.0` | `feat: estrutura do repositório e site do portfólio v1.0` |
 | `v1.1` | `feat: adiciona projetos acadêmico e pessoal` (AlugApp e Dino Game) |
 | `v1.2` | `feat: adiciona slides, roteiro e integração com LinkedIn` |
+| `v1.3` | `docs: revisão final da apresentação e do LinkedIn` |
