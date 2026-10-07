@@ -8,7 +8,6 @@
 ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
 
-🌐 **Aplicação no ar:** https://alugapp.vercel.app/
 📁 **Repositório oficial do grupo:** https://github.com/AlugApp/AlugApp
 
 | Contexto | Detalhe |
