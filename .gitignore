@@ -1,0 +1,29 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Dependências e builds
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+
+# Segredos — nunca versionar
+.env
+.env.*
+*.key
+*.pem
+credentials*.json
+
+# Logs e temporários
+*.log
+*.tmp
