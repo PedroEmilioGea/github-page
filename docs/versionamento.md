@@ -61,6 +61,5 @@ Depois, no GitHub: **Releases** → **Draft a new release** → escolher a tag �
 |---|---|
 | inicial | `Initial commit` (README criado pelo GitHub) |
 | `v1.0` | `feat: estrutura do repositório e site do portfólio v1.0` |
-| — | `feat: adiciona projeto acadêmico AlugApp` |
-| `v1.1` | `feat: adiciona projeto pessoal Dino Game e publica v1.1` |
+| `v1.1` | `feat: adiciona projetos acadêmico e pessoal` (AlugApp e Dino Game) |
 | `v1.2` | `feat: adiciona slides, roteiro e integração com LinkedIn` |

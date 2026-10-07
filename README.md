@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://pedroemiliogea.github.io/github-page/"><img alt="Site no ar" src="https://img.shields.io/badge/site-GitHub%20Pages-a3238e?style=for-the-badge&logo=github"></a>
   <a href="https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Pedro%20G%C3%AAa-0A66C2?style=for-the-badge&logo=linkedin"></a>
-  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-1.1-5b3cc4?style=for-the-badge">
+  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-1.2-5b3cc4?style=for-the-badge">
   <img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-1f9d55?style=for-the-badge">
 </p>
 
@@ -45,6 +45,7 @@ Este repositório foi criado no desafio **"Entrega Intermediária — Criação 
 | 🌐 Site do portfólio (GitHub Pages) | https://pedroemiliogea.github.io/github-page/ |
 | 📁 Repositório | https://github.com/PedroEmilioGea/github-page |
 | 👤 Perfil no GitHub | https://github.com/PedroEmilioGea |
+| 🎤 Apresentação (slides) | https://pedroemiliogea.github.io/github-page/apresentacao/ |
 | 💼 LinkedIn | [Pedro Emílio Gêa Gontijo Martins](https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/) |
 
 ## 🗂️ Estrutura do repositório
@@ -56,6 +57,7 @@ github-page/
 ├── projetos-academicos/     # Um projeto acadêmico por pasta, cada um com README
 ├── projetos-pessoais/       # Um projeto pessoal por pasta, cada um com README
 ├── docs/                    # Planejamento, versionamento, colaboração e LinkedIn
+├── apresentacao/            # Slides e roteiro do vídeo de 5 minutos
 ├── CHANGELOG.md             # Histórico de versões
 ├── LICENSE                  # Licença MIT
 └── README.md                # Este arquivo
@@ -109,7 +111,7 @@ O projeto segue o padrão **Conventional Commits** e marca versões com **tags**
 |---|---|---|
 | `v1.0` | ✅ Publicada | Estrutura do repositório, site inicial e documentação base |
 | `v1.1` | ✅ Publicada | Projetos AlugApp (acadêmico) e Dino Game (pessoal) |
-| `v1.2` | 🔜 Planejada | Slides, roteiro do vídeo e integração com o LinkedIn |
+| `v1.2` | ✅ Publicada | Slides, roteiro do vídeo e integração com o LinkedIn |
 
 Detalhes em [`CHANGELOG.md`](CHANGELOG.md) e [`docs/versionamento.md`](docs/versionamento.md).
 
@@ -120,7 +122,8 @@ Detalhes em [`CHANGELOG.md`](CHANGELOG.md) e [`docs/versionamento.md`](docs/vers
 | [Planejamento](docs/planejamento.md) | Seções, estrutura de pastas, convenções e roadmap |
 | [Versionamento](docs/versionamento.md) | Fluxo Git, padrão de commits e tags |
 | [Colaboração](docs/colaboracao.md) | Branches, Pull Requests, Issues e revisão |
-| [Integração com LinkedIn](docs/linkedin.md) | Como o portfólio foi adicionado ao perfil |
+| [Integração com LinkedIn](docs/linkedin.md) | Como o portfólio foi adicionado ao perfil, com os textos usados |
+| [Apresentação](apresentacao/) | Slides e roteiro do vídeo de 5 minutos |
 
 ## 👤 Autor
 

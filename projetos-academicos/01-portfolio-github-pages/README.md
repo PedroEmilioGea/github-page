@@ -2,7 +2,7 @@
 
 > Repositório de portfólio versionado com Git e site estático publicado com GitHub Pages — Entrega Intermediária do **Bootcamp I**.
 
-![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-1f9d55) ![Versão](https://img.shields.io/badge/vers%C3%A3o-1.0-5b3cc4)
+![Status](https://img.shields.io/badge/status-conclu%C3%ADdo-1f9d55) ![Versão](https://img.shields.io/badge/vers%C3%A3o-1.2-5b3cc4)
 
 🌐 **Site:** https://pedroemiliogea.github.io/github-page/
 📁 **Código do site:** [`index.html`](../../index.html) · [`assets/`](../../assets/)
@@ -29,7 +29,7 @@ Desafio **"Criação de Repositório com Versionamento"**: desenvolver um reposi
 | 3 | Pastas por projeto + READMEs documentados | [`projetos-academicos/`](../), [`projetos-pessoais/`](../../projetos-pessoais/) |
 | 4 | Página no GitHub Pages | https://pedroemiliogea.github.io/github-page/ |
 | 5 | Repositório público + integração com LinkedIn | [`docs/linkedin.md`](../../docs/linkedin.md) |
-| 6 | Apresentação de 5 minutos | pasta `apresentacao/` (v1.2) |
+| 6 | Apresentação de 5 minutos | [`apresentacao/`](../../apresentacao/) — slides e [roteiro](../../apresentacao/roteiro.md) |
 
 ## 🛠️ Tecnologias
 

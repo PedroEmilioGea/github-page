@@ -6,7 +6,19 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e
 ## [Não lançado]
 
 ### Planejado
-- `v1.2` — slides da apresentação, roteiro do vídeo e integração com o LinkedIn.
+- Link do vídeo no YouTube no site e no README.
+
+## [1.2] — 2026-10-06
+
+### Adicionado
+- Slides da apresentação em HTML (`apresentacao/index.html`), com navegação por teclado, toque e tela cheia.
+- Roteiro do vídeo de 5 minutos com falas, tempos e passo a passo de gravação e publicação (`apresentacao/roteiro.md`).
+- Textos prontos para Destaques, Projetos e Publicação no LinkedIn (`docs/linkedin.md`).
+- Link "Apresentação" no menu, no topo e na seção Documentação do site.
+
+### Alterado
+- `docs/versionamento.md` alinhado ao histórico real de commits.
+- Versão do site e do README atualizada para 1.2.
 
 ## [1.1] — 2026-10-06
 

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apresentação · Portfólio Pedro Gêa</title>
+  <meta name="description" content="Slides da apresentação do portfólio no GitHub — Bootcamp I.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f17;
+      --surface: #1a1a27;
+      --surface-2: #232334;
+      --text: #ececf4;
+      --muted: #a3a3b8;
+      --border: #2e2e42;
+      --accent: #e25bc9;
+      --accent-2: #9b86ff;
+      --ok: #4ade80;
+      --warn: #f2c46d;
+      --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: #08080d; color: var(--text); font-family: var(--font); overflow: hidden; }
+
+    /* Palco 16:9 que se ajusta à tela */
+    .stage {
+      position: absolute; top: 50%; left: 50%;
+      width: 1280px; height: 720px;
+      transform-origin: center center;
+    }
+    .slide {
+      position: absolute; inset: 0; padding: 64px 80px;
+      background:
+        radial-gradient(900px 500px at 100% 0%, rgba(155,134,255,.14), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(226,91,201,.12), transparent 60%),
+        var(--bg);
+      border-radius: 18px; overflow: hidden;
+      display: flex; flex-direction: column;
+      opacity: 0; visibility: hidden; transform: translateX(30px);
+      transition: opacity .45s ease, transform .45s ease, visibility .45s;
+    }
+    .slide.is-active { opacity: 1; visibility: visible; transform: none; }
+    .slide.is-prev { transform: translateX(-30px); }
+
+    .eyebrow { font-family: var(--mono); font-size: 16px; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 14px; }
+    h1 { font-size: 72px; line-height: 1.05; margin: 0 0 22px; letter-spacing: -.03em; }
+    h2 { font-size: 46px; line-height: 1.1; margin: 0 0 28px; letter-spacing: -.02em; }
+    p { margin: 0; }
+    .lead { font-size: 24px; color: var(--muted); line-height: 1.5; max-width: 900px; }
+    .grad { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    strong { color: var(--text); }
+
+    .grid { display: grid; gap: 22px; flex: none; }
+    .g2 { grid-template-columns: 1fr 1fr; }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g-media { grid-template-columns: 1fr 1.15fr; align-items: center; flex: 1; min-height: 0; }
+
+    .box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px 30px; }
+    .box h3 { margin: 0 0 10px; font-size: 24px; }
+    .box p, .box li { color: var(--muted); font-size: 19px; line-height: 1.55; }
+    .box ul { margin: 0; padding-left: 20px; }
+    .box li + li { margin-top: 6px; }
+    .num { font-family: var(--mono); font-size: 14px; color: var(--accent); display: block; margin-bottom: 8px; }
+
+    .list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .list li { display: flex; gap: 14px; align-items: flex-start; font-size: 21px; line-height: 1.45; color: var(--muted); }
+    .list li::before { content: ""; flex: 0 0 10px; height: 10px; margin-top: 11px; border-radius: 3px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tags span { font-family: var(--mono); font-size: 14px; padding: 5px 10px; border-radius: 8px; background: var(--surface-2); color: var(--muted); }
+
+    .shot { width: 100%; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,.45); display: block; }
+    .shot-wrap { max-height: 480px; overflow: hidden; border-radius: 14px; }
+
+    pre.term {
+      margin: 0; padding: 22px 26px; border-radius: 14px; background: #08080d; border: 1px solid var(--border);
+      font-family: var(--mono); font-size: 17px; line-height: 1.75; color: #e6e6f0; white-space: pre;
+    }
+    .t-p { color: var(--accent); } .t-s { color: var(--warn); } .t-ok { color: var(--ok); } .t-c { color: #6b6b85; }
+
+    /* Linha do tempo de versões */
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; margin-top: 8px; }
+    .timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 19px; height: 2px; background: var(--border); }
+    .tl { position: relative; padding-top: 50px; }
+    .tl::before { content: ""; position: absolute; top: 10px; left: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
+    .tl b { font-family: var(--mono); font-size: 20px; color: var(--text); display: block; margin-bottom: 6px; }
+    .tl span { color: var(--muted); font-size: 16px; line-height: 1.45; display: block; }
+
+    .links { display: grid; gap: 14px; margin-top: 30px; }
+    .links a { display: flex; gap: 16px; align-items: baseline; color: var(--text); text-decoration: none; font-size: 22px; }
+    .links a span { font-family: var(--mono); font-size: 14px; color: var(--accent); width: 110px; flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+    .links a:hover { color: var(--accent); }
+
+.stats { margin-top: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .stats div { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; }
+    .stats b { display: block; font-size: 52px; line-height: 1; font-weight: 800; }
+    .stats span { color: var(--muted); font-size: 18px; }
+    .foot { position: absolute; left: 80px; right: 80px; bottom: 26px; display: flex; justify-content: space-between; font-size: 14px; color: #6b6b85; font-family: var(--mono); }
+
+    /* Controles */
+    .ui { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; }
+    .progress { height: 4px; background: rgba(255,255,255,.06); }
+    .progress span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .4s ease; }
+    .controls { position: fixed; right: 18px; bottom: 16px; display: flex; gap: 8px; align-items: center; z-index: 11; }
+    .controls button, .controls a {
+      background: rgba(26,26,39,.9); color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+      height: 38px; min-width: 38px; padding: 0 12px; font: 600 14px var(--font); cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .controls button:hover, .controls a:hover { border-color: var(--accent); }
+    .counter { font-family: var(--mono); font-size: 13px; color: var(--muted); padding: 0 6px; }
+    .hint { position: fixed; left: 18px; bottom: 22px; font-size: 13px; color: #6b6b85; z-index: 11; }
+    @media (max-width: 700px) { .hint { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .slide { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="stage" id="stage" aria-live="polite">
+
+    <!-- 1. Capa -->
+    <section class="slide" data-title="Capa">
+      <p class="eyebrow">Bootcamp I · Entrega Intermediária</p>
+      <h1>Meu portfólio<br>no <span class="grad">GitHub</span></h1>
+      <p class="lead">Criação de repositório com versionamento: projetos acadêmicos e pessoais, documentação, GitHub Pages e integração com o LinkedIn.</p>
+      <div style="margin-top:auto; display:flex; gap:18px; align-items:center;">
+        <div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#a3238e,#5b3cc4);display:grid;place-items:center;font:700 22px var(--mono);">PG</div>
+        <div>
+          <p style="font-size:24px;font-weight:700;">Pedro Emílio Gêa Gontijo Martins</p>
+          <p style="color:var(--muted);font-size:18px;">Ciência da Computação · 8º período · Automação &amp; IA</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Objetivo -->
+    <section class="slide" data-title="Objetivo">
+      <p class="eyebrow">01 · O desafio</p>
+      <h2>Objetivo</h2>
+      <div class="grid g3">
+        <div class="box"><span class="num">ORGANIZAR</span><h3>Projetos em um só lugar</h3><p>Acadêmicos e pessoais, cada um com pasta e README próprios.</p></div>
+        <div class="box"><span class="num">VERSIONAR</span><h3>Boas práticas de Git</h3><p>Commits padronizados, tags de versão e histórico registrado no CHANGELOG.</p></div>
+        <div class="box"><span class="num">PUBLICAR</span><h3>Site + LinkedIn</h3><p>Página no GitHub Pages e projetos integrados ao perfil profissional.</p></div>
+      </div>
+      <div class="stats">
+        <div><b>1</b><span>repositório público</span></div>
+        <div><b>3</b><span>projetos documentados</span></div>
+        <div><b>3</b><span>versões com tags</span></div>
+        <div><b>1</b><span>site no GitHub Pages</span></div>
+      </div>
+    </section>
+
+    <!-- 3. Planejamento -->
+    <section class="slide" data-title="Planejamento">
+      <p class="eyebrow">02 · Planejamento do repositório</p>
+      <h2>Seções e estrutura de pastas</h2>
+      <div class="grid g2">
+        <pre class="term">github-page/
+├── index.html            <span class="t-c"># site (GitHub Pages)</span>
+├── assets/               <span class="t-c"># CSS, JS e imagens</span>
+├── projetos-academicos/
+│   ├── 01-portfolio-github-pages/
+│   └── 02-alugapp/
+├── projetos-pessoais/
+│   └── 01-dino-game/
+├── docs/                 <span class="t-c"># planejamento, Git, LinkedIn</span>
+├── apresentacao/         <span class="t-c"># estes slides</span>
+├── CHANGELOG.md
+└── README.md</pre>
+        <ul class="list" style="align-self:center;">
+          <li><span><strong>Uma pasta por projeto</strong>, numerada e em kebab-case.</span></li>
+          <li><span><strong>Todo projeto tem README</strong> no mesmo modelo: descrição, tecnologias, como executar e aprendizados.</span></li>
+          <li><span><strong>docs/</strong> concentra planejamento, versionamento, colaboração e LinkedIn.</span></li>
+          <li><span>Tudo descrito em <strong>docs/planejamento.md</strong>.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4. Versionamento -->
+    <section class="slide" data-title="Versionamento">
+      <p class="eyebrow">03 · Versionamento com Git</p>
+      <h2>Do computador ao GitHub</h2>
+      <div class="grid g2">
+        <pre class="term"><span class="t-p">$</span> git add .
+<span class="t-p">$</span> git commit -m <span class="t-s">"feat: adiciona projetos..."</span>
+<span class="t-p">$</span> git tag v1.1
+<span class="t-p">$</span> git push origin main --tags
+<span class="t-ok">✔ GitHub Pages atualizado</span></pre>
+        <ul class="list" style="align-self:center;">
+          <li><span>Feito com o <strong>GitHub Desktop</strong>: Changes → Commit → Push.</span></li>
+          <li><span>Mensagens no padrão <strong>Conventional Commits</strong> (<code>feat:</code>, <code>docs:</code>, <code>fix:</code>).</span></li>
+          <li><span>Cada entrega marcada com uma <strong>tag</strong> e registrada no <strong>CHANGELOG</strong>.</span></li>
+        </ul>
+      </div>
+      <div class="timeline" style="margin-top:40px;">
+        <div class="tl"><b>Initial</b><span>Repositório criado com README e GitHub Pages ativado.</span></div>
+        <div class="tl"><b>v1.0</b><span>Estrutura de pastas, site do portfólio e documentação base.</span></div>
+        <div class="tl"><b>v1.1</b><span>Projetos AlugApp (acadêmico) e Dino Game (pessoal).</span></div>
+        <div class="tl"><b>v1.2</b><span>Apresentação, roteiro do vídeo e integração com o LinkedIn.</span></div>
+      </div>
+    </section>
+
+    <!-- 5. GitHub Pages -->
+    <section class="slide" data-title="GitHub Pages">
+      <p class="eyebrow">04 · Publicação</p>
+      <h2>Site no GitHub Pages</h2>
+      <div class="grid g-media">
+        <ul class="list">
+          <li><span>HTML, CSS e JavaScript <strong>sem frameworks</strong>.</span></li>
+          <li><span>Seções <strong>Sobre, Projetos, Documentação e Contato</strong>.</span></li>
+          <li><span><strong>Filtro</strong> de projetos, <strong>tema claro/escuro</strong> e layout <strong>responsivo</strong>.</span></li>
+          <li><span>Meta tags <strong>Open Graph</strong> para prévia no LinkedIn.</span></li>
+          <li><span>Publicado a cada <code>push</code> na branch <code>main</code>.</span></li>
+        </ul>
+        <div class="shot-wrap"><img class="shot" src="img/site-portfolio.png" alt="Página inicial do site do portfólio"></div>
+      </div>
+    </section>
+
+    <!-- 6. AlugApp -->
+    <section class="slide" data-title="AlugApp">
+      <p class="eyebrow">05 · Projeto acadêmico</p>
+      <h2>AlugApp</h2>
+      <div class="grid g-media">
+        <div>
+          <p class="lead" style="font-size:21px;">Plataforma de <strong>aluguel de itens entre pessoas</strong>: quem precisa paga menos sem comprar, e quem tem itens parados gera renda.</p>
+          <ul class="list" style="margin-top:22px;">
+            <li><span>Projeto em grupo do <strong>Projeto Integrador I ao IV</strong> (CEUB).</span></li>
+            <li><span>Minha parte: <strong>requisitos e regras de negócio</strong>, fluxo de aluguel, configuração do <strong>Supabase</strong>, Dashboard, Chat e recuperação de senha.</span></li>
+          </ul>
+          <div class="tags"><span>TypeScript</span><span>React</span><span>Supabase</span><span>Vercel</span><span>GitHub</span></div>
+        </div>
+        <div class="shot-wrap" style="background:#fff;"><img class="shot" src="../projetos-academicos/02-alugapp/img/diagrama-classes.png" alt="Diagrama de classes do AlugApp"></div>
+      </div>
+    </section>
+
+    <!-- 7. Dino Game -->
+    <section class="slide" data-title="Dino Game">
+      <p class="eyebrow">06 · Projeto pessoal</p>
+      <h2>Dino Game 2.0</h2>
+      <div class="grid g-media">
+        <div>
+          <p class="lead" style="font-size:21px;">O jogo do dinossauro do Chrome <strong>repaginado</strong>, com muita personalização.</p>
+          <ul class="list" style="margin-top:22px;">
+            <li><span><strong>6 personagens</strong> com cores, chapéus, óculos, roupas e calçados.</span></li>
+            <li><span><strong>5 cenários</strong>, <strong>4 velocidades</strong>, ciclo dia/noite e sons.</span></li>
+            <li><span><strong>Recordes</strong> salvos no navegador e controles no celular.</span></li>
+          </ul>
+          <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Canvas 2D</span><span>Web Audio</span></div>
+        </div>
+        <div class="shot-wrap"><img class="shot" src="../projetos-pessoais/01-dino-game/img/personalizacao.png" alt="Tela de personalização do Dino Game"></div>
+      </div>
+    </section>
+
+    <!-- 8. Documentação e colaboração -->
+    <section class="slide" data-title="Documentação">
+      <p class="eyebrow">07 · Documentação e colaboração</p>
+      <h2>READMEs e trabalho em equipe</h2>
+      <div class="grid g2">
+        <div class="box">
+          <h3>Documentação</h3>
+          <ul>
+            <li>README principal com sumário, links, estrutura e versões.</li>
+            <li>README por projeto: descrição, tecnologias, prints, como executar e aprendizados.</li>
+            <li>Modelo de README para novos projetos.</li>
+            <li>CHANGELOG com o histórico de cada versão.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Colaboração</h3>
+          <ul>
+            <li>GitHub Flow: branch por funcionalidade + Pull Request.</li>
+            <li>Issues para tarefas e bugs, revisão de código antes do merge.</li>
+            <li>Na prática no AlugApp: 4 integrantes no mesmo repositório.</li>
+            <li>Licença MIT e .gitignore protegendo segredos.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. LinkedIn -->
+    <section class="slide" data-title="LinkedIn">
+      <p class="eyebrow">08 · Integração</p>
+      <h2>GitHub ⇄ LinkedIn</h2>
+      <div class="grid g3">
+        <div class="box"><span class="num">GITHUB → LINKEDIN</span><h3>Perfil conectado</h3><p>Link do LinkedIn no perfil do GitHub e repositório público.</p></div>
+        <div class="box"><span class="num">DESTAQUES</span><h3>Portfólio em destaque</h3><p>Site adicionado à seção Destaques, com prévia automática.</p></div>
+        <div class="box"><span class="num">PROJETOS</span><h3>Projetos no perfil</h3><p>Portfólio, AlugApp e Dino Game na seção Projetos, com links e competências.</p></div>
+      </div>
+      <div class="box" style="margin-top:auto;">
+        <h3>Por que integrar?</h3>
+        <p>Recrutadores veem no LinkedIn <strong>o que eu sei fazer</strong> e, com um clique, chegam ao <strong>código, à documentação e ao histórico de versões</strong> no GitHub.</p>
+      </div>
+    </section>
+
+    <!-- 10. Encerramento -->
+    <section class="slide" data-title="Obrigado">
+      <p class="eyebrow">Obrigado!</p>
+      <h1 style="font-size:60px;">Links do <span class="grad">portfólio</span></h1>
+      <div class="links">
+        <a href="https://pedroemiliogea.github.io/github-page/" target="_blank" rel="noopener"><span>Site</span>pedroemiliogea.github.io/github-page</a>
+        <a href="https://github.com/PedroEmilioGea/github-page" target="_blank" rel="noopener"><span>Repositório</span>github.com/PedroEmilioGea/github-page</a>
+        <a href="https://github.com/PedroEmilioGea" target="_blank" rel="noopener"><span>GitHub</span>github.com/PedroEmilioGea</a>
+        <a href="https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/" target="_blank" rel="noopener"><span>LinkedIn</span>Pedro Emílio Gêa Gontijo Martins</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="ui"><div class="progress"><span id="bar"></span></div></div>
+  <p class="hint">← → ou espaço para navegar · F tela cheia</p>
+  <nav class="controls" aria-label="Controles da apresentação">
+    <a href="../index.html" title="Voltar ao portfólio">Site</a>
+    <button id="prev" aria-label="Slide anterior">←</button>
+    <span class="counter" id="counter">1 / 10</span>
+    <button id="next" aria-label="Próximo slide">→</button>
+    <button id="fs" aria-label="Tela cheia" title="Tela cheia (F)">⛶</button>
+  </nav>
+
+  <script>
+    (function () {
+      "use strict";
+      var stage = document.getElementById("stage");
+      var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+      var bar = document.getElementById("bar");
+      var counter = document.getElementById("counter");
+      var atual = 0;
+
+      function ajustar() {
+        var escala = Math.min(window.innerWidth / 1280, (window.innerHeight - 8) / 720) * 0.96;
+        stage.style.transform = "translate(-50%, -50%) scale(" + escala + ")";
+      }
+
+      function mostrar(i) {
+        atual = Math.max(0, Math.min(slides.length - 1, i));
+        slides.forEach(function (s, idx) {
+          s.classList.toggle("is-active", idx === atual);
+          s.classList.toggle("is-prev", idx < atual);
+          s.setAttribute("aria-hidden", idx === atual ? "false" : "true");
+        });
+        bar.style.width = ((atual + 1) / slides.length * 100) + "%";
+        counter.textContent = (atual + 1) + " / " + slides.length;
+        if (history.replaceState) history.replaceState(null, "", "#" + (atual + 1));
+      }
+
+      document.getElementById("next").addEventListener("click", function () { mostrar(atual + 1); });
+      document.getElementById("prev").addEventListener("click", function () { mostrar(atual - 1); });
+      document.getElementById("fs").addEventListener("click", telaCheia);
+
+      function telaCheia() {
+        if (!document.fullscreenElement) { document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+        else { document.exitFullscreen && document.exitFullscreen(); }
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (["ArrowRight", "PageDown", " ", "Enter"].indexOf(e.key) > -1) { e.preventDefault(); mostrar(atual + 1); }
+        else if (["ArrowLeft", "PageUp", "Backspace"].indexOf(e.key) > -1) { e.preventDefault(); mostrar(atual - 1); }
+        else if (e.key === "Home") mostrar(0);
+        else if (e.key === "End") mostrar(slides.length - 1);
+        else if (e.key === "f" || e.key === "F") telaCheia();
+      });
+
+      var x0 = null;
+      document.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      document.addEventListener("touchend", function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 50) mostrar(atual + (dx < 0 ? 1 : -1));
+        x0 = null;
+      });
+
+      window.addEventListener("resize", ajustar);
+      ajustar();
+      var inicial = parseInt(location.hash.replace("#", ""), 10);
+      mostrar(isNaN(inicial) ? 0 : inicial - 1);
+    })();
+  </script>
+</body>
+</html>
