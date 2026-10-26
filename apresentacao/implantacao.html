@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Implantação · PortfolioHUB</title>
+  <meta name="description" content="Slides da implantação do PortfolioHUB + IA Gemini — Bootcamp I.">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f0f17;
+      --surface: #1a1a27;
+      --surface-2: #232334;
+      --text: #ececf4;
+      --muted: #a3a3b8;
+      --border: #2e2e42;
+      --accent: #e25bc9;
+      --accent-2: #9b86ff;
+      --ok: #4ade80;
+      --warn: #f2c46d;
+      --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; background: #08080d; color: var(--text); font-family: var(--font); overflow: hidden; }
+
+    /* Palco 16:9 que se ajusta à tela */
+    .stage {
+      position: absolute; top: 50%; left: 50%;
+      width: 1280px; height: 720px;
+      transform-origin: center center;
+    }
+    .slide {
+      position: absolute; inset: 0; padding: 64px 80px;
+      background:
+        radial-gradient(900px 500px at 100% 0%, rgba(155,134,255,.14), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, rgba(226,91,201,.12), transparent 60%),
+        var(--bg);
+      border-radius: 18px; overflow: hidden;
+      display: flex; flex-direction: column;
+      opacity: 0; visibility: hidden; transform: translateX(30px);
+      transition: opacity .45s ease, transform .45s ease, visibility .45s;
+    }
+    .slide.is-active { opacity: 1; visibility: visible; transform: none; }
+    .slide.is-prev { transform: translateX(-30px); }
+
+    .eyebrow { font-family: var(--mono); font-size: 16px; color: var(--accent); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 14px; }
+    h1 { font-size: 72px; line-height: 1.05; margin: 0 0 22px; letter-spacing: -.03em; }
+    h2 { font-size: 46px; line-height: 1.1; margin: 0 0 28px; letter-spacing: -.02em; }
+    p { margin: 0; }
+    .lead { font-size: 24px; color: var(--muted); line-height: 1.5; max-width: 900px; }
+    .grad { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    strong { color: var(--text); }
+
+    .grid { display: grid; gap: 22px; flex: none; }
+    .g2 { grid-template-columns: 1fr 1fr; }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g-media { grid-template-columns: 1fr 1.15fr; align-items: center; flex: 1; min-height: 0; }
+
+    .box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px 30px; }
+    .box h3 { margin: 0 0 10px; font-size: 24px; }
+    .box p, .box li { color: var(--muted); font-size: 19px; line-height: 1.55; }
+    .box ul { margin: 0; padding-left: 20px; }
+    .box li + li { margin-top: 6px; }
+    .num { font-family: var(--mono); font-size: 14px; color: var(--accent); display: block; margin-bottom: 8px; }
+
+    .list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .list li { display: flex; gap: 14px; align-items: flex-start; font-size: 21px; line-height: 1.45; color: var(--muted); }
+    .list li::before { content: ""; flex: 0 0 10px; height: 10px; margin-top: 11px; border-radius: 3px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .tags span { font-family: var(--mono); font-size: 14px; padding: 5px 10px; border-radius: 8px; background: var(--surface-2); color: var(--muted); }
+
+    .shot { width: 100%; border-radius: 14px; border: 1px solid var(--border); box-shadow: 0 20px 50px rgba(0,0,0,.45); display: block; }
+    .shot-wrap { max-height: 480px; overflow: hidden; border-radius: 14px; }
+
+    pre.term {
+      margin: 0; padding: 22px 26px; border-radius: 14px; background: #08080d; border: 1px solid var(--border);
+      font-family: var(--mono); font-size: 17px; line-height: 1.75; color: #e6e6f0; white-space: pre;
+    }
+    .t-p { color: var(--accent); } .t-s { color: var(--warn); } .t-ok { color: var(--ok); } .t-c { color: #6b6b85; }
+
+    /* Linha do tempo de versões */
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; position: relative; margin-top: 8px; }
+    .timeline::before { content: ""; position: absolute; left: 0; right: 0; top: 19px; height: 2px; background: var(--border); }
+    .tl { position: relative; padding-top: 50px; }
+    .tl::before { content: ""; position: absolute; top: 10px; left: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
+    .tl b { font-family: var(--mono); font-size: 20px; color: var(--text); display: block; margin-bottom: 6px; }
+    .tl span { color: var(--muted); font-size: 16px; line-height: 1.45; display: block; }
+
+    .links { display: grid; gap: 14px; margin-top: 30px; }
+    .links a { display: flex; gap: 16px; align-items: baseline; color: var(--text); text-decoration: none; font-size: 22px; }
+    .links a span { font-family: var(--mono); font-size: 14px; color: var(--accent); width: 110px; flex-shrink: 0; text-transform: uppercase; letter-spacing: .06em; }
+    .links a:hover { color: var(--accent); }
+
+.stats { margin-top: auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .stats div { border-left: 3px solid var(--accent); padding: 4px 0 4px 18px; }
+    .stats b { display: block; font-size: 52px; line-height: 1; font-weight: 800; }
+    .stats span { color: var(--muted); font-size: 18px; }
+    .foot { position: absolute; left: 80px; right: 80px; bottom: 26px; display: flex; justify-content: space-between; font-size: 14px; color: #6b6b85; font-family: var(--mono); }
+
+    /* Controles */
+    .ui { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; }
+    .progress { height: 4px; background: rgba(255,255,255,.06); }
+    .progress span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-2)); transition: width .4s ease; }
+    .controls { position: fixed; right: 18px; bottom: 16px; display: flex; gap: 8px; align-items: center; z-index: 11; }
+    .controls button, .controls a {
+      background: rgba(26,26,39,.9); color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+      height: 38px; min-width: 38px; padding: 0 12px; font: 600 14px var(--font); cursor: pointer; text-decoration: none;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .controls button:hover, .controls a:hover { border-color: var(--accent); }
+    .counter { font-family: var(--mono); font-size: 13px; color: var(--muted); padding: 0 6px; }
+    .hint { position: fixed; left: 18px; bottom: 22px; font-size: 13px; color: #6b6b85; z-index: 11; }
+    @media (max-width: 700px) { .hint { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .slide { transition: none; } }
+  </style>
+</head>
+<body>
+  <main class="stage" id="stage" aria-live="polite">
+
+    <section class="slide" data-title="Capa">
+      <p class="eyebrow">Bootcamp I · Entrega Final</p>
+      <h1>Implantação do<br><span class="grad">PortfolioHUB</span> + IA Gemini</h1>
+      <p class="lead">Plataforma centralizada para exibir e gerenciar meus projetos, com GitHub, segurança e o Google Gemini como guia.</p>
+      <div style="margin-top:auto; display:flex; gap:18px; align-items:center;">
+        <div style="width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,#a3238e,#5b3cc4);display:grid;place-items:center;font:700 22px var(--mono);">PG</div>
+        <div>
+          <p style="font-size:24px;font-weight:700;">Pedro Emílio Gêa Gontijo Martins</p>
+          <p style="color:var(--muted);font-size:18px;">Ciência da Computação · CEUB</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Plano">
+      <p class="eyebrow">01 · Planejamento</p>
+      <h2>Plano em 6 etapas</h2>
+      <div class="timeline" style="grid-template-columns:repeat(6,1fr);">
+        <div class="tl"><b>1</b><span>Plano + Gemini como guia</span></div>
+        <div class="tl"><b>2</b><span>Ambiente GitHub e integração</span></div>
+        <div class="tl"><b>3</b><span>Usuários e segurança</span></div>
+        <div class="tl"><b>4</b><span>Compartilhamento e acesso</span></div>
+        <div class="tl"><b>5</b><span>Testes e produção</span></div>
+        <div class="tl"><b>6</b><span>Revisão e apresentação</span></div>
+      </div>
+      <div class="box" style="margin-top:auto;">
+        <h3>Documento vivo</h3>
+        <p>O plano está no <strong>Google Docs</strong> e no repositório (<code>docs/implantacao.md</code>), com cronograma, riscos e mitigação de cada fase.</p>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Gemini">
+      <p class="eyebrow">01 · Google Gemini</p>
+      <h2>Um Gem como guia da trilha</h2>
+      <div class="grid g2">
+        <div class="box">
+          <h3>Guia de Implantação PortfolioHUB</h3>
+          <ul>
+            <li>Contexto da disciplina e das entregas anteriores.</li>
+            <li>Regras: boas práticas do GitHub e da OWASP.</li>
+            <li>Sempre indica o próximo passo da trilha.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>9 prompts, um por fase</h3>
+          <ul>
+            <li>Plano e cronograma.</li>
+            <li>Integração, usuários e segurança.</li>
+            <li>Colaboração, testes e lançamento.</li>
+            <li>Estrutura desta apresentação.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="GitHub">
+      <p class="eyebrow">02 · Integração com GitHub</p>
+      <h2>O GitHub dentro do PortfolioHUB</h2>
+      <div class="grid g3">
+        <div class="box"><span class="num">API REST</span><h3>Repositórios ao vivo</h3><p>O site consulta a API do GitHub e mostra cada repositório público automaticamente.</p></div>
+        <div class="box"><span class="num">PAGES</span><h3>Produção</h3><p>Cada push na <code>main</code> publica o site com HTTPS.</p></div>
+        <div class="box"><span class="num">ACTIONS</span><h3>Automação</h3><p>Testes de HTML e links a cada push e Pull Request.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Segurança">
+      <p class="eyebrow">03 · Usuários e segurança</p>
+      <h2>Segurança em camadas</h2>
+      <div class="grid g2">
+        <ul class="list">
+          <li><span><strong>2FA</strong> na conta do GitHub.</span></li>
+          <li><span><strong>Ruleset</strong> na <code>main</code>: sem force push e sem exclusão.</span></li>
+          <li><span><strong>Secret scanning</strong> com push protection.</span></li>
+          <li><span><strong>Dependabot</strong> e relato privado de vulnerabilidades.</span></li>
+          <li><span><strong>SECURITY.md</strong> com a política completa.</span></li>
+        </ul>
+        <div class="box">
+          <h3>Menor privilégio</h3>
+          <p><strong>Admin:</strong> mantenedor<br><strong>Write:</strong> colaboradores<br><strong>Triage:</strong> revisores<br><strong>Read:</strong> professor e avaliadores</p>
+          <p style="margin-top:12px;"><code>CODEOWNERS</code> exige minha revisão em toda mudança.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Colaboração">
+      <p class="eyebrow">04 · Compartilhamento e controle de acesso</p>
+      <h2>Fluxo de colaboração</h2>
+      <pre class="term">branch feat/...  →  commits (Conventional Commits)  →  <span class="t-s">Pull Request</span>
+        →  <span class="t-ok">testes do GitHub Actions</span>  →  revisão (CODEOWNERS)  →  merge  →  tag + Release</pre>
+      <div class="grid g3" style="margin-top:26px;">
+        <div class="box"><h3>CONTRIBUTING.md</h3><p>Passo a passo, papéis e padrões.</p></div>
+        <div class="box"><h3>Templates</h3><p>Modelos de Issue (bug, melhoria) e de Pull Request.</p></div>
+        <div class="box"><h3>Licença MIT</h3><p>Código aberto e compartilhável.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Testes">
+      <p class="eyebrow">05 · Testes e produção</p>
+      <h2>Testado antes de publicar</h2>
+      <div class="grid g2">
+        <div class="box">
+          <h3>Automáticos</h3>
+          <ul>
+            <li><code>html-validate</code>: estrutura e acessibilidade.</li>
+            <li><code>lychee</code>: links internos.</li>
+            <li>Rodam em todo push e Pull Request.</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h3>Manuais</h3>
+          <ul>
+            <li>Computador e celular.</li>
+            <li>Filtro, tema, menu e API do GitHub.</li>
+            <li>API fora do ar mostra aviso amigável.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="stats">
+        <div><b>v2.0</b><span>release em produção</span></div>
+        <div><b>HTTPS</b><span>obrigatório</span></div>
+        <div><b>0</b><span>erros de HTML</span></div>
+        <div><b>0</b><span>links quebrados</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Desafios">
+      <p class="eyebrow">06 · Revisão final</p>
+      <h2>Desafios superados</h2>
+      <div class="grid g2">
+        <div class="box"><h3>Site na pasta errada</h3><p>GitHub Pages publicava <code>/docs</code>; corrigi a fonte para a raiz.</p></div>
+        <div class="box"><h3>Arquivo enviado por engano</h3><p>Removido com commit e bloqueado no <code>.gitignore</code>.</p></div>
+        <div class="box"><h3>Edição na web gerou merge</h3><p>Passei a usar <code>Fetch/Pull</code> antes de trabalhar e Pull Requests.</p></div>
+        <div class="box"><h3>Projetos sempre atualizados</h3><p>A API do GitHub lista os repositórios sem editar o site.</p></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Obrigado">
+      <p class="eyebrow">Obrigado!</p>
+      <h1 style="font-size:60px;">Links do <span class="grad">PortfolioHUB</span></h1>
+      <div class="links">
+        <a href="https://pedroemiliogea.github.io/github-page/" target="_blank" rel="noopener"><span>Site</span>pedroemiliogea.github.io/github-page</a>
+        <a href="https://github.com/PedroEmilioGea/github-page" target="_blank" rel="noopener"><span>Repositório</span>github.com/PedroEmilioGea/github-page</a>
+        <a href="https://github.com/PedroEmilioGea/github-page/blob/main/docs/implantacao.md" target="_blank" rel="noopener"><span>Plano</span>docs/implantacao.md</a>
+        <a href="https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/" target="_blank" rel="noopener"><span>LinkedIn</span>Pedro Emílio Gêa Gontijo Martins</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="ui"><div class="progress"><span id="bar"></span></div></div>
+  <p class="hint">← → ou espaço para navegar · F tela cheia</p>
+  <nav class="controls" aria-label="Controles da apresentação">
+    <a href="../index.html" title="Voltar ao portfólio">Site</a>
+    <button type="button" id="prev" aria-label="Slide anterior">←</button>
+    <span class="counter" id="counter">1 / 9</span>
+    <button type="button" id="next" aria-label="Próximo slide">→</button>
+    <button type="button" id="fs" aria-label="Tela cheia" title="Tela cheia (F)">⛶</button>
+  </nav>
+
+  <script>
+    (function () {
+      "use strict";
+      var stage = document.getElementById("stage");
+      var slides = Array.prototype.slice.call(document.querySelectorAll(".slide"));
+      var bar = document.getElementById("bar");
+      var counter = document.getElementById("counter");
+      var atual = 0;
+
+      function ajustar() {
+        var escala = Math.min(window.innerWidth / 1280, (window.innerHeight - 8) / 720) * 0.96;
+        stage.style.transform = "translate(-50%, -50%) scale(" + escala + ")";
+      }
+
+      function mostrar(i) {
+        atual = Math.max(0, Math.min(slides.length - 1, i));
+        slides.forEach(function (s, idx) {
+          s.classList.toggle("is-active", idx === atual);
+          s.classList.toggle("is-prev", idx < atual);
+          s.setAttribute("aria-hidden", idx === atual ? "false" : "true");
+        });
+        bar.style.width = ((atual + 1) / slides.length * 100) + "%";
+        counter.textContent = (atual + 1) + " / " + slides.length;
+        if (history.replaceState) history.replaceState(null, "", "#" + (atual + 1));
+      }
+
+      document.getElementById("next").addEventListener("click", function () { mostrar(atual + 1); });
+      document.getElementById("prev").addEventListener("click", function () { mostrar(atual - 1); });
+      document.getElementById("fs").addEventListener("click", telaCheia);
+
+      function telaCheia() {
+        if (!document.fullscreenElement) { document.documentElement.requestFullscreen && document.documentElement.requestFullscreen(); }
+        else { document.exitFullscreen && document.exitFullscreen(); }
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (["ArrowRight", "PageDown", " ", "Enter"].indexOf(e.key) > -1) { e.preventDefault(); mostrar(atual + 1); }
+        else if (["ArrowLeft", "PageUp", "Backspace"].indexOf(e.key) > -1) { e.preventDefault(); mostrar(atual - 1); }
+        else if (e.key === "Home") mostrar(0);
+        else if (e.key === "End") mostrar(slides.length - 1);
+        else if (e.key === "f" || e.key === "F") telaCheia();
+      });
+
+      var x0 = null;
+      document.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+      document.addEventListener("touchend", function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 50) mostrar(atual + (dx < 0 ? 1 : -1));
+        x0 = null;
+      });
+
+      window.addEventListener("resize", ajustar);
+      ajustar();
+      var inicial = parseInt(location.hash.replace("#", ""), 10);
+      mostrar(isNaN(inicial) ? 0 : inicial - 1);
+    })();
+  </script>
+</body>
+</html>

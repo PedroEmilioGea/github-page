@@ -45,6 +45,8 @@ github-page/
 ├── LICENSE                     # Licença MIT
 ├── .gitignore
 ├── .nojekyll                   # Publica os arquivos sem processamento do Jekyll
+├── SECURITY.md                 # Política de segurança (v2.0)
+├── CONTRIBUTING.md             # Guia de contribuição (v2.0)
 └── README.md                   # Apresentação do repositório
 ```
 

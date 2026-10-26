@@ -270,3 +270,10 @@ svg { width: 1.1em; height: 1.1em; fill: currentColor; flex-shrink: 0; }
   .cards { grid-template-columns: 1fr; }
   .footer__inner { flex-direction: column; }
 }
+
+/* ---------- Repositórios (API do GitHub) ---------- */
+.repos__status { color: var(--text-muted); margin: 0; }
+.repos__more { margin: 24px 0 0; font-weight: 600; }
+.card__stats { display: flex; flex-wrap: wrap; gap: 14px; font-size: .82rem; color: var(--text-muted); font-family: var(--mono); }
+.lang-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--accent-2); margin-right: 6px; vertical-align: middle; }
+.chips-wrap { min-width: 0; }

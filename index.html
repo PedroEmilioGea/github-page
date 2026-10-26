@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pedro Emílio Gêa · Portfólio</title>
+  <title>PortfolioHUB · Pedro Emílio Gêa</title>
   <meta name="description" content="Portfólio de Pedro Emílio Gêa — estudante de Ciência da Computação e desenvolvedor de Automação e IA. Projetos acadêmicos, pessoais e documentação.">
   <meta name="author" content="Pedro Emílio Gêa Gontijo Martins">
 
   <!-- Open Graph: prévia bonita ao compartilhar o link no LinkedIn -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Pedro Emílio Gêa · Portfólio">
+  <meta property="og:title" content="PortfolioHUB · Pedro Emílio Gêa">
   <meta property="og:description" content="Projetos acadêmicos e pessoais, documentação e versionamento com Git e GitHub.">
   <meta property="og:url" content="https://pedroemiliogea.github.io/github-page/">
   <meta property="og:image" content="https://github.com/PedroEmilioGea.png">
@@ -35,21 +35,22 @@
     <nav class="nav container" aria-label="Navegação principal">
       <a class="nav__logo" href="#topo" aria-label="Início">
         <span class="nav__logo-mark">PG</span>
-        <span class="nav__logo-text">Pedro Gêa</span>
+        <span class="nav__logo-text">PortfolioHUB</span>
       </a>
 
-      <button class="nav__toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+      <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
         <span></span><span></span><span></span>
       </button>
 
       <ul class="nav__menu" id="nav-menu">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#github">GitHub</a></li>
         <li><a href="#documentacao">Documentação</a></li>
-        <li><a href="apresentacao/">Apresentação</a></li>
+        <li><a href="apresentacao/implantacao.html">Apresentação</a></li>
         <li><a href="#contato">Contato</a></li>
         <li>
-          <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
             <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
             <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
           </button>
@@ -62,7 +63,7 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero container">
       <div class="hero__text">
-        <p class="hero__tag"><span class="dot"></span> Portfólio · versão 1.3</p>
+        <p class="hero__tag"><span class="dot"></span> PortfolioHUB · versão 2.0</p>
         <h1 class="hero__title">Olá, eu sou <span class="accent">Pedro Emílio Gêa</span>.</h1>
         <p class="hero__subtitle">
           Estudante de <strong>Ciência da Computação</strong> (8º período) e desenvolvedor de
@@ -71,7 +72,7 @@
         </p>
         <div class="hero__actions">
           <a class="btn btn--primary" href="#projetos">Ver projetos</a>
-          <a class="btn btn--ghost" href="apresentacao/">Apresentação</a>
+          <a class="btn btn--ghost" href="apresentacao/implantacao.html">Apresentação</a>
           <a class="btn btn--ghost" href="https://github.com/PedroEmilioGea/github-page" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
             Repositório
@@ -82,7 +83,7 @@
         <div class="avatar" data-initials="PG">
           <img onerror="this.remove()" src="https://github.com/PedroEmilioGea.png" alt="Foto de perfil de Pedro Emílio Gêa" width="260" height="260">
         </div>
-        <pre class="terminal" aria-label="Exemplo de comandos Git"><code><span class="t-prompt">$</span> git add .
+        <pre class="terminal" aria-hidden="true"><code><span class="t-prompt">$</span> git add .
 <span class="t-prompt">$</span> git commit -m <span class="t-str">"feat: portfólio v1.0"</span>
 <span class="t-prompt">$</span> git tag v1.0
 <span class="t-prompt">$</span> git push origin main --tags
@@ -102,12 +103,12 @@
               Gosto de transformar processos manuais e repetitivos em fluxos simples, confiáveis e documentados.
             </p>
             <p>
-              Este portfólio faz parte do <strong>Bootcamp I</strong> e também é um projeto vivo: cada mudança é
+              Este <strong>PortfolioHUB</strong> faz parte do <strong>Bootcamp I</strong> e também é um projeto vivo: cada mudança é
               versionada com Git, publicada no GitHub e registrada no
               <a href="https://github.com/PedroEmilioGea/github-page/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a>.
             </p>
           </div>
-          <ul class="chips" aria-label="Áreas e ferramentas">
+          <div class="chips-wrap" role="group" aria-label="Áreas e ferramentas"><ul class="chips">
             <li>Automação de processos</li>
             <li>Inteligência Artificial</li>
             <li>Git</li>
@@ -122,7 +123,7 @@
             <li>Supabase</li>
             <li>Vercel</li>
             <li>Canvas 2D</li>
-          </ul>
+          </ul></div>
         </div>
       </div>
     </section>
@@ -134,9 +135,9 @@
         <p class="section__lead">Cada projeto tem sua própria pasta no repositório e um README com objetivo, tecnologias e aprendizados.</p>
 
         <div class="filters" role="group" aria-label="Filtrar projetos">
-          <button class="filter is-active" data-filter="todos">Todos</button>
-          <button class="filter" data-filter="academico">Acadêmicos</button>
-          <button class="filter" data-filter="pessoal">Pessoais</button>
+          <button type="button" class="filter is-active" data-filter="todos">Todos</button>
+          <button type="button" class="filter" data-filter="academico">Acadêmicos</button>
+          <button type="button" class="filter" data-filter="pessoal">Pessoais</button>
         </div>
 
         <div class="cards" id="lista-projetos">
@@ -205,13 +206,45 @@
       </div>
     </section>
 
+    <!-- ===================== GITHUB (integração via API) ===================== -->
+    <section class="section" id="github">
+      <div class="container">
+        <h2 class="section__title"><span class="section__num">03</span> Repositórios no GitHub</h2>
+        <p class="section__lead">
+          Esta lista é carregada em tempo real pela <strong>API pública do GitHub</strong>: todo repositório
+          público que eu criar aparece aqui automaticamente, com linguagem, estrelas e data da última atualização.
+        </p>
+        <div class="cards" id="lista-repos" aria-live="polite">
+          <p class="repos__status" id="repos-status">Carregando repositórios…</p>
+        </div>
+        <p class="repos__more">
+          <a href="https://github.com/PedroEmilioGea?tab=repositories" target="_blank" rel="noopener">Ver todos no GitHub →</a>
+        </p>
+      </div>
+    </section>
+
     <!-- ===================== DOCUMENTAÇÃO ===================== -->
     <section class="section" id="documentacao">
       <div class="container">
-        <h2 class="section__title"><span class="section__num">03</span> Documentação</h2>
+        <h2 class="section__title"><span class="section__num">04</span> Documentação</h2>
         <p class="section__lead">Como o repositório foi planejado, versionado e integrado às plataformas profissionais.</p>
 
         <div class="docs">
+          <a class="doc" href="https://github.com/PedroEmilioGea/github-page/blob/main/docs/implantacao.md" target="_blank" rel="noopener">
+            <span class="doc__icon">HUB</span>
+            <span class="doc__title">Plano de Implantação</span>
+            <span class="doc__desc">Etapas da implantação do PortfolioHUB com o Google Gemini.</span>
+          </a>
+          <a class="doc" href="https://github.com/PedroEmilioGea/github-page/blob/main/SECURITY.md" target="_blank" rel="noopener">
+            <span class="doc__icon">SEC</span>
+            <span class="doc__title">Segurança</span>
+            <span class="doc__desc">Políticas de segurança, 2FA, proteção da branch e relato de falhas.</span>
+          </a>
+          <a class="doc" href="https://github.com/PedroEmilioGea/github-page/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">
+            <span class="doc__icon">CONTRIB</span>
+            <span class="doc__title">Como contribuir</span>
+            <span class="doc__desc">Fluxo de Pull Requests, papéis e permissões de acesso.</span>
+          </a>
           <a class="doc" href="https://github.com/PedroEmilioGea/github-page/blob/main/docs/planejamento.md" target="_blank" rel="noopener">
             <span class="doc__icon">PLAN</span>
             <span class="doc__title">Planejamento</span>
@@ -232,10 +265,10 @@
             <span class="doc__title">Integração LinkedIn</span>
             <span class="doc__desc">Como o portfólio e os projetos aparecem no perfil profissional.</span>
           </a>
-          <a class="doc" href="apresentacao/">
+          <a class="doc" href="apresentacao/implantacao.html">
             <span class="doc__icon">SLIDES</span>
             <span class="doc__title">Apresentação</span>
-            <span class="doc__desc">Slides da apresentação de 5 minutos sobre o repositório.</span>
+            <span class="doc__desc">Slides da implantação do PortfolioHUB (entrega final) e da etapa intermediária.</span>
           </a>
           <a class="doc" href="https://github.com/PedroEmilioGea/github-page/blob/main/CHANGELOG.md" target="_blank" rel="noopener">
             <span class="doc__icon">LOG</span>
@@ -249,7 +282,7 @@
     <!-- ===================== CONTATO ===================== -->
     <section class="section section--alt" id="contato">
       <div class="container contact">
-        <h2 class="section__title"><span class="section__num">04</span> Vamos conversar?</h2>
+        <h2 class="section__title"><span class="section__num">05</span> Vamos conversar?</h2>
         <p class="section__lead">Fique à vontade para me chamar no LinkedIn ou acompanhar meus repositórios no GitHub.</p>
         <div class="contact__links">
           <a class="btn btn--primary" href="https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/" target="_blank" rel="noopener">
@@ -270,7 +303,7 @@
     <div class="container footer__inner">
       <p>© <span id="ano">2026</span> Pedro Emílio Gêa Gontijo Martins</p>
       <p class="footer__version">
-        <a href="https://github.com/PedroEmilioGea/github-page/blob/main/CHANGELOG.md" target="_blank" rel="noopener">v1.3</a>
+        <a href="https://github.com/PedroEmilioGea/github-page/blob/main/CHANGELOG.md" target="_blank" rel="noopener">v2.0</a>
         · Feito com HTML, CSS e JavaScript · Hospedado no GitHub Pages
       </p>
     </div>

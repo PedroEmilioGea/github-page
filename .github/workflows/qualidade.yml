@@ -1,0 +1,33 @@
+# Testes automáticos do PortfolioHUB: valida o HTML e os links internos
+name: Qualidade do site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    name: Validar HTML e links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar o código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validar HTML (html-validate)
+        run: npx --yes html-validate@8 index.html apresentacao/index.html apresentacao/implantacao.html
+
+      - name: Verificar links internos (lychee)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --no-progress './**/*.md' './**/*.html'
+          fail: true
