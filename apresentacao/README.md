@@ -1,10 +1,11 @@
 # 🎤 Apresentação
 
-Material da apresentação de 5 minutos do repositório (etapa 6 do desafio).
+Slides das apresentações de 5 minutos do Bootcamp I.
 
 | Arquivo | Conteúdo |
 |---|---|
-| [`index.html`](index.html) | Slides em HTML — [abrir online](https://pedroemiliogea.github.io/github-page/apresentacao/) |
+| [`implantacao.html`](implantacao.html) | **Entrega final:** slides da implantação do PortfolioHUB — [abrir online](https://pedroemiliogea.github.io/github-page/apresentacao/implantacao.html) |
+| [`index.html`](index.html) | Entrega intermediária: slides do portfólio — [abrir online](https://pedroemiliogea.github.io/github-page/apresentacao/) |
 | `img/` | Imagens usadas nos slides |
 
 **Navegação:** `→` / `Espaço` avança · `←` volta · `F` tela cheia · no celular, deslize para os lados.

@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 Relatar vulnerabilidade (privado)
+    url: https://github.com/PedroEmilioGea/github-page/security/advisories/new
+    about: Não abra Issue pública para falhas de segurança.

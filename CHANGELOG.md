@@ -3,7 +3,21 @@
 Todas as mudanças relevantes deste repositório são registradas aqui.
 Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e versões marcadas com tags Git.
 
-## [Não lançado]
+## [2.0] — 2026-10-25 · PortfolioHUB
+
+### Adicionado
+- Plano de Implantação do PortfolioHUB + IA Gemini (`docs/implantacao.md`) e trilha do Google Gemini (`docs/gemini.md`).
+- Seção **Repositórios no GitHub** no site, carregada pela API REST do GitHub.
+- Política de segurança (`SECURITY.md`), guia de segurança, gestão de usuários e testes em `docs/`.
+- `CONTRIBUTING.md`, `CODEOWNERS`, modelos de Issue e de Pull Request.
+- Dependabot para as GitHub Actions e workflow de CI (`html-validate` + `lychee`).
+- Slides da implantação (`apresentacao/implantacao.html`).
+
+### Alterado
+- Site renomeado para **PortfolioHUB**, versão 2.0, com novos cards de documentação.
+- Botões com `type="button"` e ajustes de acessibilidade apontados pelo validador de HTML.
+
+## [1.3.1] — 2026-10-07
 
 ### Removido
 - Roteiro do vídeo (`apresentacao/roteiro.md`), usado só como apoio para a gravação.

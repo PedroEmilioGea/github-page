@@ -1,4 +1,4 @@
-<h1 align="center">Portfólio · Pedro Emílio Gêa</h1>
+<h1 align="center">PortfolioHUB · Pedro Emílio Gêa</h1>
 
 <p align="center">
   Repositório de projetos acadêmicos e pessoais, com versionamento Git, documentação e site publicado no GitHub Pages.
@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://pedroemiliogea.github.io/github-page/"><img alt="Site no ar" src="https://img.shields.io/badge/site-GitHub%20Pages-a3238e?style=for-the-badge&logo=github"></a>
   <a href="https://www.linkedin.com/in/pedro-em%C3%ADlio-g%C3%AAa-gontijo-martins-45b3a32ba/"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-Pedro%20G%C3%AAa-0A66C2?style=for-the-badge&logo=linkedin"></a>
-  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-1.3-5b3cc4?style=for-the-badge">
+  <img alt="Versão" src="https://img.shields.io/badge/vers%C3%A3o-2.0-5b3cc4?style=for-the-badge">
   <img alt="Licença MIT" src="https://img.shields.io/badge/licen%C3%A7a-MIT-1f9d55?style=for-the-badge">
 </p>
 
@@ -26,6 +26,19 @@
 - [Autor](#-autor)
 
 ---
+
+## 🚀 PortfolioHUB v2.0 — Entrega Final
+
+O repositório evoluiu para o **PortfolioHUB**: a plataforma centralizada que exibe e gerencia meus projetos, implantada com o **Google Gemini** como guia.
+
+| Etapa do desafio | Onde está |
+|---|---|
+| 1. Planejamento + Gemini | [`docs/implantacao.md`](docs/implantacao.md) · [`docs/gemini.md`](docs/gemini.md) |
+| 2. Ambiente GitHub e integração | Seção *Repositórios no GitHub* do site (API REST) · GitHub Pages |
+| 3. Usuários e segurança | [`SECURITY.md`](SECURITY.md) · [`docs/seguranca.md`](docs/seguranca.md) · [`docs/gestao-usuarios.md`](docs/gestao-usuarios.md) |
+| 4. Compartilhamento e acesso | [`CONTRIBUTING.md`](CONTRIBUTING.md) · [`.github/`](.github/) (CODEOWNERS, templates) |
+| 5. Integração e testes | [`.github/workflows/qualidade.yml`](.github/workflows/qualidade.yml) · [`docs/testes.md`](docs/testes.md) |
+| 6. Apresentação | [Slides da implantação](https://pedroemiliogea.github.io/github-page/apresentacao/implantacao.html) |
 
 ## 👋 Sobre
 
@@ -56,10 +69,13 @@ github-page/
 ├── assets/                  # CSS, JavaScript e imagens do site
 ├── projetos-academicos/     # Um projeto acadêmico por pasta, cada um com README
 ├── projetos-pessoais/       # Um projeto pessoal por pasta, cada um com README
-├── docs/                    # Planejamento, versionamento, colaboração e LinkedIn
-├── apresentacao/            # Slides da apresentação de 5 minutos
+├── .github/                 # CODEOWNERS, templates, Dependabot e GitHub Actions
+├── docs/                    # Implantação, segurança, usuários, testes, Gemini e guias
+├── apresentacao/            # Slides das apresentações (intermediária e final)
 ├── CHANGELOG.md             # Histórico de versões
 ├── LICENSE                  # Licença MIT
+├── SECURITY.md              # Política de segurança
+├── CONTRIBUTING.md          # Como contribuir
 └── README.md                # Este arquivo
 ```
 
@@ -113,6 +129,7 @@ O projeto segue o padrão **Conventional Commits** e marca versões com **tags**
 | `v1.1` | ✅ Publicada | Projetos AlugApp (acadêmico) e Dino Game (pessoal) |
 | `v1.2` | ✅ Publicada | Slides, roteiro do vídeo e integração com o LinkedIn |
 | `v1.3` | ✅ Publicada | Revisão final: ajustes no LinkedIn, slides e roteiro |
+| `v2.0` | ✅ Publicada | **PortfolioHUB**: segurança, colaboração, CI, API do GitHub e plano de implantação |
 
 Detalhes em [`CHANGELOG.md`](CHANGELOG.md) e [`docs/versionamento.md`](docs/versionamento.md).
 

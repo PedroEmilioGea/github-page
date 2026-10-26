@@ -64,3 +64,4 @@ Depois, no GitHub: **Releases** → **Draft a new release** → escolher a tag �
 | `v1.1` | `feat: adiciona projetos acadêmico e pessoal` (AlugApp e Dino Game) |
 | `v1.2` | `feat: adiciona slides, roteiro e integração com LinkedIn` |
 | `v1.3` | `docs: revisão final da apresentação e do LinkedIn` |
+| `v2.0` | `feat: implanta o PortfolioHUB com segurança, CI e integração com o GitHub` (via Pull Request) |
